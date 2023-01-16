@@ -69,6 +69,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `, mySprite2, direction, 0)
     }
+    music.pewPew.play()
 })
 function enemy_direction (mySprite: Sprite) {
     if (Math.percentChance(50)) {
@@ -216,6 +217,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite4, ot
         otherSprite2.destroy()
         console.log(convertToText(enemy_sprite_list.removeAt(enemy_sprite_list.indexOf(otherSprite2))))
         info.changeScoreBy(1)
+        music.zapped.play()
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -256,6 +258,7 @@ let mySprite2: Sprite = null
 let direction = 0
 let enemy_directions_list: number[] = []
 let enemy_sprite_list: Sprite[] = []
+music.magicWand.play()
 tiles.setCurrentTilemap(tilemap`level0`)
 info.setLife(3)
 info.setScore(0)
